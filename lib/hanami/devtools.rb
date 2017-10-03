@@ -1,7 +1,8 @@
-require "hanami/devtools/version"
+# frozen_string_literal: true
 
 module Hanami
+  # Hanami devtools
   module Devtools
-    # Your code goes here...
+    require "hanami/devtools/version"
   end
 end
