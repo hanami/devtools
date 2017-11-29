@@ -1,0 +1,15 @@
+# Please keep AllCops, Bundler, Layout, Style, Metrics groups and then order cops
+# alphabetically
+#
+# References:
+#   * https://github.com/bbatsov/ruby-style-guide
+#   * https://rubocop.readthedocs.io/
+inherit_from:
+  - https://raw.githubusercontent.com/hanami/devtools/master/.rubocop.yml
+AllCops:
+  TargetRubyVersion: 2.4
+Style/FrozenStringLiteralComment:
+  Enabled: true
+# We should enforce double quotes in Hanami 2.0
+Style/StringLiterals:
+  Enabled: true
