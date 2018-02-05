@@ -1,0 +1,50 @@
+#!/bin/bash
+set -euo pipefail
+IFS=$'\n\t'
+
+declare pwd=$PWD
+declare cache="$pwd/vendor/cache"
+
+bundle_update() {
+  bundle update
+  echo ""
+}
+
+bundle_package() {
+  bundle package --all
+  echo ""
+}
+
+install_hanami() {
+  local directory=($cache/hanami-*)
+  pushd $directory > /dev/null
+
+  find . -name \*.gem -delete
+  gem build hanami.gemspec > /dev/null
+
+  local pkg=(hanami-*.gem)
+
+  gem install $pkg > /dev/null
+  mv $pkg $cache
+
+  echo "Installed $pkg (from $directory)"
+
+  popd > /dev/null
+  echo ""
+}
+
+generate_index() {
+  pushd $cache > /dev/null
+    gem generate_index
+  popd > /dev/null
+  echo ""
+}
+
+main() {
+  bundle_update &&
+    bundle_package &&
+    install_hanami &&
+    generate_index
+}
+
+main

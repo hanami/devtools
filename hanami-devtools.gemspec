@@ -5,7 +5,7 @@ lib = File.expand_path("../lib", __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require "hanami/devtools/version"
 
-Gem::Specification.new do |spec|
+Gem::Specification.new do |spec| # rubocop:disable Metrics/BlockLength
   spec.name          = "hanami-devtools"
   spec.version       = Hanami::Devtools::VERSION
   spec.authors       = ["Luca Guidi"]
@@ -27,8 +27,16 @@ Gem::Specification.new do |spec|
     f.match(%r{^(test|spec|features)/})
   end
 
-  spec.add_dependency "rubocop", "0.50.0"
+  spec.add_dependency "aruba", "~> 0.14"
+  spec.add_dependency "bundler", "~> 1.16"
+  spec.add_dependency "capybara", "~> 2.17"
+  spec.add_dependency "coveralls", "~> 0.8"
+  spec.add_dependency "excon", "~> 0.60"
+  spec.add_dependency "poltergeist", "~> 1.17"
+  spec.add_dependency "rack", "~> 2.0"
+  spec.add_dependency "rspec", "~> 3.7"
+  spec.add_dependency "rubocop", "0.52.1"
+  spec.add_dependency "hanami-utils"
 
-  spec.add_development_dependency "bundler", "~> 1.15"
-  spec.add_development_dependency "rake",    "~> 12.0"
+  spec.add_development_dependency "rake", "~> 12.3"
 end
