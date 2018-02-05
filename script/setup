@@ -6,7 +6,7 @@ declare pwd=$PWD
 declare cache="$pwd/vendor/cache"
 
 cleanup() {
-  local teardown="$( dirname "${BASH_SOURCE[0]}/teardown" )"
+  local teardown="$( dirname "${BASH_SOURCE[0]}" )/teardown"
   $("$teardown")
 }
 
