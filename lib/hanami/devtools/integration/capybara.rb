@@ -3,7 +3,7 @@
 require "capybara"
 require "capybara/rspec"
 require "capybara/dsl"
-require_relative "platform"
+require "hanami/devtools/integration/platform"
 
 RSpec.configure do |config|
   config.include Capybara::DSL, type: :integration

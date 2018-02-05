@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require_relative "with_tmp_directory"
+require "hanami/devtools/integration/with_tmp_directory"
 
 module RSpec
   module Support

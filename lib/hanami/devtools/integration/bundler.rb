@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
 require "open3"
-require_relative "env"
-require_relative "silently"
-require_relative "files"
+require "hanami/devtools/integration/env"
+require "hanami/devtools/integration/silently"
+require "hanami/devtools/integration/files"
 
 module RSpec
   module Support

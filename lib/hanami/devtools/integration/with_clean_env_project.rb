@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
-require_relative "with_project"
-require_relative "bundler"
+require "hanami/devtools/integration/with_project"
+require "hanami/devtools/integration/bundler"
 
 module RSpec
   module Support

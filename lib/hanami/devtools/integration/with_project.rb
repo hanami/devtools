@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
-require_relative "silently"
-require_relative "bundler"
-require_relative "with_tmp_directory"
-require_relative "within_project_directory"
+require "hanami/devtools/integration/silently"
+require "hanami/devtools/integration/bundler"
+require "hanami/devtools/integration/with_tmp_directory"
+require "hanami/devtools/integration/within_project_directory"
 
 module RSpec
   module Support

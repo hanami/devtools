@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 require "hanami/utils/files"
-require_relative "with_directory"
+require "hanami/devtools/integration/with_directory"
 
 module RSpec
   module Support

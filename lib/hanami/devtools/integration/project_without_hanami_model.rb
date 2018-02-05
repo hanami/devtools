@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require_relative "with_clean_env_project"
+require "hanami/devtools/integration/with_clean_env_project"
 
 module RSpec
   module Support

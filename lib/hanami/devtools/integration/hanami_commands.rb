@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
-require_relative "bundler"
-require_relative "files"
-require_relative "retry"
-require_relative "random_port"
+require "hanami/devtools/integration/bundler"
+require "hanami/devtools/integration/files"
+require "hanami/devtools/integration/retry"
+require "hanami/devtools/integration/random_port"
 require "hanami/utils/string"
 
 module RSpec

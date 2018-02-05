@@ -4,9 +4,9 @@
 #
 # @since 0.2.0
 module Platform
-  require_relative "platform/os"
-  require_relative "platform/engine"
-  require_relative "platform/matcher"
+  require "hanami/devtools/integration/platform/os"
+  require "hanami/devtools/integration/platform/engine"
+  require "hanami/devtools/integration/platform/matcher"
 
   def self.ci?
     ENV["TRAVIS"] == "true"

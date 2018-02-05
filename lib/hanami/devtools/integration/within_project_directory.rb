@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 
 require "pathname"
-require_relative "with_directory"
-require_relative "env"
+require "hanami/devtools/integration/with_directory"
+require "hanami/devtools/integration/env"
 
 module RSpec
   module Support

@@ -3,7 +3,7 @@
 require "rack"
 require "rack/test"
 require "excon"
-require_relative "retry"
+require "hanami/devtools/integration/retry"
 
 module RSpec
   module Support
