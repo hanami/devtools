@@ -32,11 +32,11 @@ Gem::Specification.new do |spec| # rubocop:disable Metrics/BlockLength
   spec.add_dependency "capybara", "~> 2.17"
   spec.add_dependency "coveralls", "~> 0.8"
   spec.add_dependency "excon", "~> 0.60"
-  spec.add_dependency "hanami-utils"
   spec.add_dependency "poltergeist", "~> 1.17"
   spec.add_dependency "rack", "~> 2.0"
   spec.add_dependency "rspec", "~> 3.7"
   spec.add_dependency "rubocop", "0.52.1"
+  spec.add_dependency "hanami-utils"
 
   spec.add_development_dependency "rake", "~> 12.3"
 end

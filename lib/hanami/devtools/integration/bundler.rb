@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 require "open3"
+require "pathname"
 require "hanami/devtools/integration/env"
 require "hanami/devtools/integration/silently"
 require "hanami/devtools/integration/files"
@@ -15,8 +16,14 @@ module RSpec
       HANAMI_GEMS = %w[utils validations router helpers model view controller mailer assets].freeze
 
       def self.root
-        Pathname.new(__dir__).join("..", "..")
+        @_root
       end
+
+      def self.root=(value)
+        @_root = Pathname.new(value).realpath
+      end
+
+      self.root = Dir.pwd
 
       def self.cache
         root.join("vendor", "cache")
