@@ -8,8 +8,12 @@ inherit_from:
   - https://raw.githubusercontent.com/hanami/devtools/master/.rubocop.yml
 AllCops:
   TargetRubyVersion: 2.3
+Gemspec/OrderedDependencies:
+  Enabled: false
 Style/FrozenStringLiteralComment:
   Enabled: true
+Style/ClosingParenthesisIndentation:
+  Enabled: false
 Style/StringLiterals:
   Enabled: true
   EnforcedStyle: double_quotes
