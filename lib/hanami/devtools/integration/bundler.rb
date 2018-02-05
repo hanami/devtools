@@ -33,8 +33,15 @@ module RSpec
         return if cache.exist?
 
         with_clean_env do
-          RSpec::Support.silently "./script/setup"
+          RSpec::Support.silently(setup_script)
         end
+      end
+
+      def self.setup_script
+        result = root.join("script", "setup")
+        return result.to_s if result.exist?
+
+        Pathname.new(__dir__).join("..", "..", "..", "..", "script", "setup").realpath.to_s
       end
 
       def self.with_clean_env(&blk)
