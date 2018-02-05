@@ -10,10 +10,10 @@ AllCops:
   TargetRubyVersion: 2.3
 Gemspec/OrderedDependencies:
   Enabled: false
+Layout/ClosingParenthesisIndentation:
+  Enabled: false
 Style/FrozenStringLiteralComment:
   Enabled: true
-Style/ClosingParenthesisIndentation:
-  Enabled: false
 Style/StringLiterals:
   Enabled: true
   EnforcedStyle: double_quotes
