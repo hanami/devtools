@@ -42,6 +42,8 @@ main() {
       bundle_install &&
       advertise_end
   fi
+
+  exit
 }
 
 main
