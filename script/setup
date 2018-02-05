@@ -6,7 +6,8 @@ declare pwd=$PWD
 declare cache="$pwd/vendor/cache"
 
 cleanup() {
-  ./script/teardown
+  local teardown="$( dirname "${BASH_SOURCE[0]}/teardown" )"
+  $("$teardown")
 }
 
 bundle_package() {
@@ -14,37 +15,21 @@ bundle_package() {
   echo ""
 }
 
-install_hanami_frameworks() {
-  declare -a frameworks=(utils validations router helpers model view controller mailer assets cli)
-
-  for framework in "${frameworks[@]}"
-  do
-    local directory=($cache/$framework-*)
-    pushd $directory > /dev/null
-
-      find . -name \*.gem -delete
-      gem build hanami-$framework.gemspec > /dev/null
-
-      local pkg=(hanami-$framework-*.gem)
-
-      gem install $pkg > /dev/null
-      mv $pkg $cache
-
-      echo "Installed $pkg (from $directory)"
-
-    popd > /dev/null
-  done
-  echo ""
-}
-
 install_hanami() {
-  bundle exec rake build
-  local pkg=($pwd/pkg/hanami-*.gem)
+  local directory=($cache/hanami-*)
+  pushd $directory > /dev/null
+
+  find . -name \*.gem -delete
+  gem build hanami.gemspec > /dev/null
+
+  local pkg=(hanami-*.gem)
 
   gem install $pkg > /dev/null
   mv $pkg $cache
 
-  echo "Installed $pkg (from $(git rev-parse HEAD))"
+  echo "Installed $pkg (from $directory)"
+
+  popd > /dev/null
   echo ""
 }
 
@@ -58,7 +43,6 @@ generate_index() {
 main() {
   cleanup &&
     bundle_package &&
-    install_hanami_frameworks &&
     install_hanami &&
     generate_index
 }
