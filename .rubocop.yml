@@ -11,6 +11,8 @@ AllCops:
   TargetRubyVersion: 2.3
 Bundler/OrderedGems:
   Enabled: false
+Gemspec/OrderedDependencies:
+  Enabled: false
 Metrics/BlockLength:
   Exclude:
     - "spec/**/*"
@@ -30,4 +32,6 @@ Style/RegexpLiteral:
   Enabled: false
 # We should enforce double quotes in Hanami 2.0
 Style/StringLiterals:
+  Enabled: false
+Layout/ClosingParenthesisIndentation:
   Enabled: false
