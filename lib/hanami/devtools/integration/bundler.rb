@@ -98,7 +98,8 @@ module RSpec
           @err = Thread.new { stderr.read }.value.strip
         end
 
-        (@all_output ||= "") << [
+        @all_output ||= ""
+        @all_output += [
           "$ #{cmd.to_s.strip}",
           out,
           err,
