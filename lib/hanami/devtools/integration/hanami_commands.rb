@@ -12,6 +12,14 @@ module RSpec
     #
     # @since 0.2.0
     module HanamiCommands # rubocop:disable Metrics/ModuleLength
+      if defined?(Hanami::Environment)
+        LISTEN_ALL_HOST = Hanami::Environment::LISTEN_ALL_HOST
+        DEFAULT_PORT    = Hanami::Environment::DEFAULT_PORT
+      else
+        LISTEN_ALL_HOST = "0.0.0.0"
+        DEFAULT_PORT    = 2300
+      end
+
       private
 
       def rackup(args = {}, &blk)
@@ -131,8 +139,8 @@ CODE
       end
 
       def setup_capybara(args)
-        host = args.fetch(:host, Hanami::Environment::LISTEN_ALL_HOST)
-        port = args.fetch(:port, Hanami::Environment::DEFAULT_PORT)
+        host = args.fetch(:host, LISTEN_ALL_HOST)
+        port = args.fetch(:port, DEFAULT_PORT)
 
         Capybara.configure do |config|
           config.app_host = "http://#{host}:#{port}"
