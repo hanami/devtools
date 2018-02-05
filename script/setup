@@ -5,9 +5,9 @@ IFS=$'\n\t'
 declare pwd=$PWD
 declare cache="$pwd/vendor/cache"
 
-cleanup() {
-  local teardown="$( dirname "${BASH_SOURCE[0]}" )/teardown"
-  $("$teardown")
+bundle_update() {
+  bundle update
+  echo ""
 }
 
 bundle_package() {
@@ -41,7 +41,7 @@ generate_index() {
 }
 
 main() {
-  cleanup &&
+  bundle_update &&
     bundle_package &&
     install_hanami &&
     generate_index
