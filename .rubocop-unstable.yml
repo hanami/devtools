@@ -9,7 +9,7 @@ inherit_from:
 AllCops:
   TargetRubyVersion: 2.3
   Exclude:
-    - "vendor/**/*.rb"
+    - "vendor/**/*"
 Gemspec/OrderedDependencies:
   Enabled: false
 Layout/ClosingParenthesisIndentation:
