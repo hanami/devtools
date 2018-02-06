@@ -5,6 +5,10 @@ IFS=$'\n\t'
 declare pwd=$PWD
 declare cache="$pwd/vendor/cache"
 
+banner() {
+  echo "Using hanami-devtools at: $(git rev-parse --short HEAD)"
+}
+
 bundle_update() {
   bundle update
   echo ""
@@ -41,7 +45,8 @@ generate_index() {
 }
 
 main() {
-  bundle_update &&
+  banner &&
+    bundle_update &&
     bundle_package &&
     install_hanami &&
     generate_index
