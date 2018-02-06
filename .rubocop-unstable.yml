@@ -8,6 +8,8 @@ inherit_from:
   - https://raw.githubusercontent.com/hanami/devtools/master/.rubocop.yml
 AllCops:
   TargetRubyVersion: 2.3
+  Exclude:
+    - "vendor/**/*.rb"
 Gemspec/OrderedDependencies:
   Enabled: false
 Layout/ClosingParenthesisIndentation:
