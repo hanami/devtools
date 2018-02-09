@@ -20,7 +20,7 @@ bundle_package() {
 }
 
 install_hanami() {
-  local directory=($cache/hanami-*)
+  local directory=$(find $cache -maxdepth 1 -type d -name 'hanami-*' -print -quit)
   pushd $directory > /dev/null
 
   find . -name \*.gem -delete
