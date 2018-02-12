@@ -69,6 +69,10 @@ module RSpec
         Hanami::Utils::Files.remove_line(path, target)
       end
 
+      def inject_line_before(path, target, contents)
+        Hanami::Utils::Files.inject_line_before(path, target, contents)
+      end
+
       def inject_line_after(path, target, contents)
         Hanami::Utils::Files.inject_line_after(path, target, contents)
       end
