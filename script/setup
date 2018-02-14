@@ -19,6 +19,33 @@ bundle_package() {
   echo ""
 }
 
+install_hanami_frameworks() {
+  declare -a frameworks=(utils validations router helpers model view controller mailer assets cli webconsole)
+
+  for framework in "${frameworks[@]}"
+  do
+    local directory=($cache/$framework-*)
+
+    if [ -d $directory ]; then
+      pushd $directory > /dev/null
+
+        find . -name \*.gem -delete
+        gem build hanami-$framework.gemspec > /dev/null
+
+        local pkg=(hanami-$framework-*.gem)
+
+        gem install $pkg > /dev/null
+        mv $pkg $cache
+
+        echo "Installed $pkg (from $directory)"
+
+      popd > /dev/null
+    fi
+
+  done
+  echo ""
+}
+
 install_hanami() {
   local directory=$(find $cache -maxdepth 1 -type d -name 'hanami-*' -print -quit)
   pushd $directory > /dev/null
@@ -48,6 +75,7 @@ main() {
   banner &&
     bundle_update &&
     bundle_package &&
+    install_hanami_frameworks &&
     install_hanami &&
     generate_index
 }
