@@ -29,7 +29,6 @@ Gem::Specification.new do |spec| # rubocop:disable Metrics/BlockLength
 
   spec.add_dependency "aruba", "~> 0.14"
   spec.add_dependency "bundler", "~> 1.16"
-  spec.add_dependency "sqlite3", "~> 1.3"
   spec.add_dependency "dotenv", "~> 2.0"
   spec.add_dependency "capybara", "~> 2.17"
   spec.add_dependency "coveralls", "~> 0.8"
