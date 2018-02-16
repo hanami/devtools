@@ -9,7 +9,7 @@ module Platform
   require "hanami/devtools/integration/platform/matcher"
 
   def self.ci?
-    ENV["TRAVIS"] == "true"
+    ENV.key?("CI")
   end
 
   def self.match(&blk)
