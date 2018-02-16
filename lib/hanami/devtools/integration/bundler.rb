@@ -53,9 +53,8 @@ module RSpec
       attr_reader :out, :err, :exitstatus
 
       def setup_gemfile(gems: [], exclude_gems: [], path: "Gemfile") # rubocop:disable Metrics/MethodLength
-        source     = "source 'file://#{cache}'"
-        content    = ::File.readlines(path)
-        content[0] = "#{source}\n"
+        content = ::File.readlines(path)
+        content = inject_gemfile_sources(content, cache)
 
         unless gems.empty?
           gems = gems.map do |g|
@@ -78,7 +77,7 @@ module RSpec
       end
 
       def bundle_install
-        bundle "install --local --no-cache --retry 0 --no-color"
+        bundle "install --no-cache --retry 0 --no-color"
       end
 
       def bundle_exec(cmd, env: nil, &blk)
@@ -91,6 +90,13 @@ module RSpec
         hanami_env = "HANAMI_ENV=#{env} " unless env.nil?
 
         system_exec("#{hanami_env}#{ruby_bin} -I#{load_paths} #{bundle_bin} #{cmd}", &blk)
+      end
+
+      def inject_gemfile_sources(contents, vendor_cache_path)
+        sources = ["source 'file://#{vendor_cache_path}'\n"]
+        sources.unshift("source 'http://gems.hanamirb.org:9292'\n") if Platform.ci?
+
+        sources + contents[1..-1]
       end
 
       # Adapted from Bundler source code
