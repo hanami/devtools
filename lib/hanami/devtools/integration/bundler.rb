@@ -77,6 +77,12 @@ module RSpec
       end
 
       def bundle_install
+        if Platform.ci?
+          bundle "config mirror.https://rubygems.org http://gems.hanamirb.org:9292"
+          bundle "config mirror.https://rubygems.org.fallback_timeout true"
+          bundle "config mirror.https://rubygems.org.fallback_timeout 3"
+        end
+
         bundle "install --no-cache --retry 0 --no-color"
       end
 
@@ -94,7 +100,7 @@ module RSpec
 
       def inject_gemfile_sources(contents, vendor_cache_path)
         sources = ["source 'file://#{vendor_cache_path}'\n"]
-        sources.unshift("source 'http://gems.hanamirb.org:9292'\n") if Platform.ci?
+        sources.unshift("source 'https://rubygems.org'\n") if Platform.ci?
 
         sources + contents[1..-1]
       end
