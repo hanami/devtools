@@ -77,7 +77,7 @@ module RSpec
       end
 
       def bundle_install
-        bundle "install --no-cache --retry 0 --no-color --path=#{cache}"
+        bundle "install --local --no-cache --retry 0 --no-color"
       end
 
       def bundle_exec(cmd, env: nil, &blk)
