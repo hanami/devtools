@@ -30,11 +30,22 @@ module RSpec
       end
 
       def self.setup
-        return if cache.exist?
+        return unless setup?
 
         with_clean_env do
           RSpec::Support.silently(setup_script)
         end
+      end
+
+      def self.setup?
+        # !cache.exist? ||
+        #   !hanami_gems_packaged?
+        false
+      end
+
+      def self.hanami_gems_packaged?
+        packaged_gems = Dir.glob(cache.join("#{HANAMI_GEMS_PREFIX}*.gem"))
+        packaged_gems.count == HANAMI_GEMS.count + 1 # hanami-utils, hanami-validations.. + hanami itself
       end
 
       def self.setup_script
@@ -92,11 +103,12 @@ module RSpec
         system_exec("#{hanami_env}#{ruby_bin} -I#{load_paths} #{bundle_bin} #{cmd}", &blk)
       end
 
-      def inject_gemfile_sources(contents, vendor_cache_path)
-        sources = ["source 'file://#{vendor_cache_path}'\n"]
-        sources.unshift("source 'http://gems.hanamirb.org:9292'\n") if Platform.ci?
+      def inject_gemfile_sources(contents, _vendor_cache_path)
+        # sources = ["source 'file://#{vendor_cache_path}'\n"]
+        # sources.unshift("source 'http://gems.hanamirb.org:9292'\n") if Platform.ci?
 
-        sources + contents[1..-1]
+        # sources + contents[1..-1]
+        contents
       end
 
       # Adapted from Bundler source code
