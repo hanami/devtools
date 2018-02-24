@@ -96,11 +96,12 @@ module RSpec
       end
 
       def bundle(cmd, env: nil, &blk)
-        ruby_bin   = which("ruby")
+        # ruby_bin   = which("ruby")
         bundle_bin = which("bundle")
         hanami_env = "HANAMI_ENV=#{env} " unless env.nil?
 
-        system_exec("#{hanami_env}#{ruby_bin} -I#{load_paths} #{bundle_bin} #{cmd}", &blk)
+        # system_exec("#{hanami_env}#{ruby_bin} -I#{load_paths} #{bundle_bin} #{cmd}", &blk)
+        system_exec("#{hanami_env}#{bundle_bin} #{cmd}", &blk)
       end
 
       def inject_gemfile_sources(contents, _vendor_cache_path)
