@@ -3,6 +3,7 @@
 require "open3"
 require "pathname"
 require "hanami/devtools/integration/env"
+require "hanami/devtools/integration/gemfile"
 require "hanami/devtools/integration/silently"
 require "hanami/devtools/integration/files"
 
@@ -13,7 +14,7 @@ module RSpec
     # @since 0.2.0
     module Bundler
       HANAMI_GEMS_PREFIX = "hanami-"
-      HANAMI_GEMS = %w[utils validations router helpers model view controller mailer assets cli webconsole].freeze
+      HANAMI_GEMS = %w[utils validations router controller view helpers mailer cli assets model webconsole].freeze
 
       def self.root
         @_root
@@ -34,18 +35,13 @@ module RSpec
 
         with_clean_env do
           RSpec::Support.silently(setup_script)
+          Gemfile.write_checksum
         end
       end
 
       def self.setup?
-        # !cache.exist? ||
-        #   !hanami_gems_packaged?
-        false
-      end
-
-      def self.hanami_gems_packaged?
-        packaged_gems = Dir.glob(cache.join("#{HANAMI_GEMS_PREFIX}*.gem"))
-        packaged_gems.count == HANAMI_GEMS.count + 1 # hanami-utils, hanami-validations.. + hanami itself
+        return true if Platform.ci?
+        Gemfile.changed?
       end
 
       def self.setup_script

@@ -2,82 +2,35 @@
 set -euo pipefail
 IFS=$'\n\t'
 
-declare pwd=$PWD
-declare cache="$pwd/vendor/cache"
-
 banner() {
   echo "Using hanami-devtools at: $(git rev-parse --short HEAD)"
 }
 
-bundle_update() {
-  bundle update
-  echo ""
-}
-
-bundle_package() {
-  bundle package --all
-  echo ""
-}
-
-install_hanami_frameworks() {
-  declare -a frameworks=(utils validations router helpers model view controller mailer assets cli webconsole)
-
-  for framework in "${frameworks[@]}"
-  do
-    local directory=($cache/$framework-*)
-
-    if [ -d $directory ]; then
-      pushd $directory > /dev/null
-
-        find . -name \*.gem -delete
-        gem build hanami-$framework.gemspec > /dev/null
-
-        local pkg=(hanami-$framework-*.gem)
-
-        gem install $pkg > /dev/null
-        mv $pkg $cache
-
-        echo "Installed $pkg (from $directory)"
-
-      popd > /dev/null
-    fi
-
-  done
-  echo ""
-}
-
 install_hanami() {
-  local directory=$(find $cache -maxdepth 1 -type d -name 'hanami-*' -print -quit)
-  pushd $directory > /dev/null
+  hanami_gems=($(bundle show | grep hanami))
 
-  find . -name \*.gem -delete
-  gem build hanami.gemspec > /dev/null
+  for bundler_gem_info in "${hanami_gems[@]}"
+  do
+    local gem_name=$(echo $bundler_gem_info | cut -d' ' -f 4)
+    local gem_directory=$(bundle show $gem_name)
 
-  local pkg=(hanami-*.gem)
 
-  gem install $pkg > /dev/null
-  mv $pkg $cache
+    pushd $gem_directory > /dev/null
+      find . -name \*.gem -delete
+      gem build $gem_name.gemspec > /dev/null
 
-  echo "Installed $pkg (from $directory)"
+      local pkg=($gem_name-*.gem)
+      gem install --force $pkg > /dev/null
+      rm $pkg
 
-  popd > /dev/null
-  echo ""
-}
-
-generate_index() {
-  pushd $cache > /dev/null
-    gem generate_index
-  popd > /dev/null
-  echo ""
+      echo Installed $pkg from $gem_directory
+    popd > /dev/null
+  done
 }
 
 main() {
   banner &&
-    bundle_update &&
-    bundle_package &&
-    install_hanami_frameworks &&
-    install_hanami &&
-    generate_index
+    install_hanami
 }
 
 main
