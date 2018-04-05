@@ -21,6 +21,8 @@ Style/AndOr:
   Enabled: false
 Style/EmptyMethod:
   Enabled: false
+Style/ExpandPathArguments:
+  Enabled: false
 # We should enforce in Hanami 2.0
 Style/FrozenStringLiteralComment:
   Enabled: false
