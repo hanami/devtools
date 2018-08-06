@@ -7,7 +7,7 @@
 inherit_from:
   - https://raw.githubusercontent.com/hanami/devtools/master/.rubocop.yml
 AllCops:
-  TargetRubyVersion: 2.4
+  TargetRubyVersion: 2.3
   Exclude:
     - "vendor/**/*"
     - "vendor/**/.*" # See https://github.com/bbatsov/rubocop/issues/4832
