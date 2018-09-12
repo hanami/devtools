@@ -17,6 +17,10 @@ Metrics/BlockLength:
   Exclude:
     - "spec/**/*"
     - "tmp/**/*"
+Metrics/LineLength:
+  Enabled: false
+Naming/FileName:
+  Enabled: false
 Style/AndOr:
   Enabled: false
 Style/EmptyMethod:
@@ -25,8 +29,6 @@ Style/ExpandPathArguments:
   Enabled: false
 # We should enforce in Hanami 2.0
 Style/FrozenStringLiteralComment:
-  Enabled: false
-Metrics/LineLength:
   Enabled: false
 Style/RaiseArgs:
   Enabled: false
