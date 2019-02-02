@@ -22,7 +22,7 @@ module RSpec
       private
 
       def run_command(cmd, output = nil, exit_status: 0)
-        run_simple "bundle exec #{cmd}", fail_on_error: false
+        run_command_and_stop "bundle exec #{cmd}", fail_on_error: false
 
         match_output(output)
         expect(last_command_started).to have_exit_status(exit_status)
