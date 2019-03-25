@@ -21,14 +21,14 @@ module RSpec
 
       private
 
-      def run_command(cmd, output = nil, exit_status: 0)
+      def run_cmd(cmd, output = nil, exit_status: 0)
         run_command_and_stop "bundle exec #{cmd}", fail_on_error: false
 
         match_output(output)
         expect(last_command_started).to have_exit_status(exit_status)
       end
 
-      def run_command_with_clean_env(cmd, successful: true)
+      def run_cmd_with_clean_env(cmd, successful: true)
         result = ::Bundler.clean_system(cmd, out: File::NULL)
         expect(result).to be(successful)
       end
