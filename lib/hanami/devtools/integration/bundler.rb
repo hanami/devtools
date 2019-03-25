@@ -60,6 +60,9 @@ module RSpec
       attr_reader :out, :err, :exitstatus
 
       def setup_gemfile(gems: [], exclude_gems: [], path: "Gemfile") # rubocop:disable Metrics/MethodLength
+        @current_gemfile_path = RSpec::Support::Env["BUNDLE_GEMFILE"]
+        RSpec::Support::Env["BUNDLE_GEMFILE"] = ::File.join(Dir.pwd, path)
+
         content = ::File.readlines(path)
         content = inject_gemfile_sources(content, cache)
 
@@ -81,6 +84,10 @@ module RSpec
         end
 
         rewrite(path, content)
+      end
+
+      def restore_gemfile
+        RSpec::Support::Env["BUNDLE_GEMFILE"] = @current_gemfile_path if defined?(@current_gemfile_path)
       end
 
       def bundle_install

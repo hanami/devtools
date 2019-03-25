@@ -15,14 +15,18 @@ module RSpec
 
       KNOWN_ARGUMENTS = %i[database template test].freeze
 
-      def with_project(project = "bookshelf", args = {})
+      def with_project(project = "bookshelf", args = {}) # rubocop:disable Metrics/MethodLength
         with_tmp_directory do
           create_project(project, args)
 
           within_project_directory(project) do
-            setup_gemfile(gems: gem_dependencies(args), exclude_gems: args.fetch(:exclude_gems, []))
-            bundle_install
-            yield
+            begin
+              setup_gemfile(gems: gem_dependencies(args), exclude_gems: args.fetch(:exclude_gems, []))
+              bundle_install
+              yield
+            ensure
+              restore_gemfile
+            end
           end
         end
       end
@@ -55,6 +59,7 @@ module RSpec
 
       def _create_project_args(args)
         return if args.empty?
+
         flags = args.dup.keep_if { |k, _| KNOWN_ARGUMENTS.include?(k) }
 
         result = flags.map do |arg, value|

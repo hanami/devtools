@@ -64,14 +64,19 @@ module RSpec
 
       attr_reader :original, :env
 
+      ENV_VARS = %w[RUBYOPT RUBYLIB RUBY_ROOT RUBY_ENGINE RUBY_VERSION GEM_ROOT GEM_HOME GEM_PATH BUNDLE_GEMFILE].freeze
+
       def setup
         synchronize do
           @env = {}
         end
 
-        self["GEM_ROOT"] = original["GEM_ROOT"]
-        self["GEM_HOME"] = original["GEM_HOME"]
-        self["GEM_PATH"] = original["GEM_PATH"]
+        ENV_VARS.each do |var|
+          original_value = original.fetch(var, nil)
+          next if original_value.nil?
+
+          self[var] = original_value
+        end
       end
 
       def synchronize(&blk)
