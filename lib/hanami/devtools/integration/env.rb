@@ -64,7 +64,7 @@ module RSpec
 
       attr_reader :original, :env
 
-      ENV_VARS = %w[RUBYOPT RUBYLIB RUBY_ROOT RUBY_ENGINE RUBY_VERSION GEM_ROOT GEM_HOME GEM_PATH BUNDLE_GEMFILE].freeze
+      ENV_VARS = %w[RUBYLIB RUBY_ROOT RUBY_ENGINE RUBY_VERSION GEM_ROOT GEM_HOME GEM_PATH BUNDLE_GEMFILE].freeze
 
       def setup
         synchronize do
