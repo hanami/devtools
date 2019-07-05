@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+require "fileutils"
 require "hanami/utils/files"
 require "hanami/devtools/integration/with_directory"
 
@@ -14,11 +15,22 @@ module RSpec
       private
 
       def with_tmp_directory(dir = Pathname.new("tmp").join("aruba"))
+        delete_tmp_directory(dir)
+        create_tmp_directory(dir)
+
         with_directory(dir) do
           yield
         end
       ensure
-        Hanami::Utils::Files.delete_directory(dir)
+        delete_tmp_directory(dir)
+      end
+
+      def create_tmp_directory(dir)
+        FileUtils.mkdir_p(dir)
+      end
+
+      def delete_tmp_directory(dir)
+        Hanami::Utils::Files.delete_directory(dir) if dir.exist?
       end
     end
   end
