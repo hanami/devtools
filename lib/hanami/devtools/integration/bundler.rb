@@ -107,12 +107,9 @@ module RSpec
         system_exec("#{hanami_env}#{bundle_bin} #{cmd}", &blk)
       end
 
-      def inject_gemfile_sources(contents, _vendor_cache_path)
-        # sources = ["source 'file://#{vendor_cache_path}'\n"]
-        # sources.unshift("source 'http://gems.hanamirb.org:9292'\n") if Platform.ci?
-
-        # sources + contents[1..-1]
-        contents
+      def inject_gemfile_sources(contents, vendor_cache_path)
+        sources = ["source 'file://#{vendor_cache_path}'\n"]
+        sources + contents[1..-1]
       end
 
       # Adapted from Bundler source code
