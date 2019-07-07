@@ -41,6 +41,7 @@ module RSpec
 
       def self.setup?
         return true if Platform.ci?
+
         Gemfile.changed?
       end
 
@@ -59,7 +60,9 @@ module RSpec
 
       attr_reader :out, :err, :exitstatus
 
-      def setup_gemfile(gems: [], exclude_gems: [], path: "Gemfile") # rubocop:disable Metrics/MethodLength
+      # rubocop:disable Metrics/MethodLength
+      # rubocop:disable Metrics/AbcSize
+      def setup_gemfile(gems: [], exclude_gems: [], path: "Gemfile")
         @current_gemfile_path = RSpec::Support::Env["BUNDLE_GEMFILE"]
         RSpec::Support::Env["BUNDLE_GEMFILE"] = ::File.join(Dir.pwd, path)
 
@@ -85,6 +88,8 @@ module RSpec
 
         rewrite(path, content)
       end
+      # rubocop:enable Metrics/AbcSize
+      # rubocop:enable Metrics/MethodLength
 
       def restore_gemfile
         RSpec::Support::Env["BUNDLE_GEMFILE"] = @current_gemfile_path if defined?(@current_gemfile_path)
