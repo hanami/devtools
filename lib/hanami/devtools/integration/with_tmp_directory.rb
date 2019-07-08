@@ -30,7 +30,14 @@ module RSpec
       end
 
       def delete_tmp_directory(dir)
-        Hanami::Utils::Files.delete_directory(dir) if dir.exist?
+        directory = case dir
+                    when Pathname
+                      dir
+                    when String
+                      Pathname.new(dir)
+                    end
+
+        Hanami::Utils::Files.delete_directory(directory) if directory.exist?
       end
     end
   end
