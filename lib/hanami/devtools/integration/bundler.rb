@@ -114,7 +114,7 @@ module RSpec
 
       def inject_gemfile_sources(contents, vendor_cache_path)
         sources = ["source 'file://#{vendor_cache_path}'\n"]
-        sources + contents[1..-1]
+        sources + contents
       end
 
       # Adapted from Bundler source code
