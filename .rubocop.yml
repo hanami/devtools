@@ -21,6 +21,8 @@ Metrics/LineLength:
   Enabled: false
 Naming/FileName:
   Enabled: false
+Naming/RescuedExceptionsVariableName:
+  PreferredName: exception
 Style/AndOr:
   Enabled: false
 Style/EmptyMethod:
