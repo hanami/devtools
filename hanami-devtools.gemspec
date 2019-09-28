@@ -38,5 +38,5 @@ Gem::Specification.new do |spec| # rubocop:disable Metrics/BlockLength
   spec.add_dependency "rubocop", "~> 0.73.0"
   spec.add_dependency "hanami-utils"
 
-  spec.add_development_dependency "rake", "~> 12.3"
+  spec.add_development_dependency "rake", "~> 13.0"
 end
