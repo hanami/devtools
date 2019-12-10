@@ -14,7 +14,7 @@ module RSpec
     # @since 0.2.0
     module Bundler
       HANAMI_GEMS_PREFIX = "hanami-"
-      HANAMI_GEMS = %w[utils validations router controller view helpers mailer cli assets model webconsole].freeze
+      HANAMI_GEMS = %w[utils validations router controller view helpers mailer assets model webconsole].freeze
 
       def self.root
         @_root
