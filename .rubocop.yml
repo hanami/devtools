@@ -13,12 +13,12 @@ Bundler/OrderedGems:
   Enabled: false
 Gemspec/OrderedDependencies:
   Enabled: false
+Layout/LineLength:
+  Enabled: false
 Metrics/BlockLength:
   Exclude:
     - "spec/**/*"
     - "tmp/**/*"
-Metrics/LineLength:
-  Enabled: false
 Naming/FileName:
   Enabled: false
 Naming/RescuedExceptionsVariableName:
