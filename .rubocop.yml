@@ -8,7 +8,7 @@ AllCops:
   DisplayCopNames: true
   DisplayStyleGuide: true
   ExtraDetails: false
-  TargetRubyVersion: 2.3
+  TargetRubyVersion: 2.4
 Bundler/OrderedGems:
   Enabled: false
 Gemspec/OrderedDependencies:
