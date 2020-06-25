@@ -44,6 +44,8 @@ Style/HashEachMethods:
   Enabled: true
 Style/EmptyMethod:
   Enabled: false
+Style/ExponentialNotation:
+  Enabled: false
 Style/ExpandPathArguments:
   Enabled: false
 Style/FrozenStringLiteralComment:
