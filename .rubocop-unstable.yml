@@ -4,21 +4,40 @@
 # References:
 #   * https://github.com/bbatsov/ruby-style-guide
 #   * https://rubocop.readthedocs.io/
-inherit_from:
-  - https://raw.githubusercontent.com/hanami/devtools/master/.rubocop.yml
 AllCops:
-  TargetRubyVersion: 2.5
+  DisplayCopNames: true
+  DisplayStyleGuide: true
+  TargetRubyVersion: 2.7
+  ExtraDetails: false
   Exclude:
     - "vendor/**/*"
     - "vendor/**/.*" # See https://github.com/bbatsov/rubocop/issues/4832
 Gemspec/OrderedDependencies:
   Enabled: false
+Layout/LineLength:
+  Enabled: false
 Layout/ClosingParenthesisIndentation:
+  Enabled: false
+Naming/FileName:
   Enabled: false
 Naming/RescuedExceptionsVariableName:
   PreferredName: 'exception'
+Metrics/BlockLength:
+  Exclude:
+    - "spec/**/*"
+    - "tmp/**/*"
+Style/AndOr:
+  Enabled: false
+Style/EmptyMethod:
+  Enabled: false
+Style/ExpandPathArguments:
+  Enabled: false
 Style/FrozenStringLiteralComment:
   Enabled: true
 Style/StringLiterals:
   Enabled: true
   EnforcedStyle: double_quotes
+Style/RaiseArgs:
+  Enabled: false
+Style/RegexpLiteral:
+  Enabled: false
