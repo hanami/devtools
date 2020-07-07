@@ -31,6 +31,10 @@ Style/AndOr:
   Enabled: false
 Style/HashEachMethods:
   Enabled: true
+Style/HashTransformKeys:
+  Enabled: true
+Style/HashTransformValues:
+  Enabled: true
 Style/EmptyMethod:
   Enabled: false
 Style/ExpandPathArguments:
