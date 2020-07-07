@@ -15,6 +15,10 @@ Gemspec/OrderedDependencies:
   Enabled: false
 Layout/LineLength:
   Enabled: false
+Lint/StructNewOverride:
+  Enabled: true
+Lint/RaiseException:
+  Enabled: true
 Metrics/BlockLength:
   Exclude:
     - "spec/**/*"
@@ -25,6 +29,8 @@ Naming/RescuedExceptionsVariableName:
   PreferredName: exception
 Style/AndOr:
   Enabled: false
+Style/HashEachMethods:
+  Enabled: true
 Style/EmptyMethod:
   Enabled: false
 Style/ExpandPathArguments:
