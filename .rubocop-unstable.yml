@@ -33,12 +33,17 @@ Lint/StructNewOverride:
 Naming/FileName:
   Enabled: false
 Naming/RescuedExceptionsVariableName:
-  PreferredName: 'exception'
+  PreferredName: "exception"
 Metrics/BlockLength:
   Exclude:
     - "spec/**/*"
     - "tmp/**/*"
+Style/AccessorGrouping:
+  Enabled: true
+  EnforcedStyle: "separated"
 Style/AndOr:
+  Enabled: false
+Style/BisectedAttrAccessor:
   Enabled: false
 Style/HashEachMethods:
   Enabled: true
@@ -53,6 +58,8 @@ Style/FrozenStringLiteralComment:
 Style/HashTransformKeys:
   Enabled: true
 Style/HashTransformValues:
+  Enabled: true
+Style/RedundantAssignment:
   Enabled: true
 Style/RedundantFetchBlock:
   Enabled: true
