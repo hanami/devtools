@@ -23,8 +23,6 @@ Layout/LineLength:
     - "spec/**/*_spec.rb"
 Layout/SpaceInLambdaLiteral:
   Enabled: false
-Layout/SpaceAroundMethodCallOperator:
-  Enabled: false
 Layout/MultilineMethodCallIndentation:
   Enabled: true
   EnforcedStyle: indented
@@ -92,8 +90,6 @@ Style/EachWithObject:
 Style/EmptyMethod:
   Enabled: false
 Style/ExpandPathArguments:
-  Enabled: false
-Style/ExponentialNotation:
   Enabled: false
 Style/FormatString:
   Enabled: false
