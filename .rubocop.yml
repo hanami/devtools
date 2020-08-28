@@ -13,41 +13,122 @@ Bundler/OrderedGems:
   Enabled: false
 Gemspec/OrderedDependencies:
   Enabled: false
+Layout/ClosingParenthesisIndentation:
+  Enabled: false
+Layout/FirstArrayElementIndentation:
+  EnforcedStyle: consistent
 Layout/LineLength:
+  Max: 100
+  Exclude:
+    - "spec/**/*_spec.rb"
+Layout/SpaceInLambdaLiteral:
+  Enabled: false
+Layout/SpaceAroundMethodCallOperator:
+  Enabled: false
+Layout/MultilineMethodCallIndentation:
+  Enabled: true
+  EnforcedStyle: indented
+Layout/SpaceInsideHashLiteralBraces:
+  Enabled: true
+  EnforcedStyle: no_space
+  EnforcedStyleForEmptyBraces: no_space
+Lint/BooleanSymbol:
   Enabled: false
 Lint/StructNewOverride:
-  Enabled: true
+  Enabled: false
 Lint/RaiseException:
-  Enabled: true
-Metrics/BlockLength:
+  Enabled: false
+Lint/SuppressedException:
   Exclude:
-    - "spec/**/*"
-    - "tmp/**/*"
+    - "spec/spec_helper.rb"
+Metrics/AbcSize:
+  Max: 25
+Metrics/CyclomaticComplexity:
+  Enabled: true
+  Max: 12
+Metrics/MethodLength:
+  Enabled: false
+Metrics/ClassLength:
+  Enabled: false
+Metrics/BlockLength:
+  Enabled: false
 Naming/FileName:
+  Enabled: false
+# Naming/FileName:
+#   Exclude:
+#     - "lib/*-*.rb"
+Naming/MemoizedInstanceVariableName:
+  Enabled: false
+Naming/MethodName:
+  Enabled: false
+Naming/PredicateName:
   Enabled: false
 Naming/RescuedExceptionsVariableName:
   PreferredName: exception
+Style/AccessModifierDeclarations:
+  Enabled: false
+Style/Alias:
+  Enabled: true
+  EnforcedStyle: prefer_alias_method
 Style/AndOr:
   Enabled: false
+Style/AsciiComments:
+  Enabled: false
+Style/BlockDelimiters:
+  Enabled: false
+Style/ClassAndModuleChildren:
+  Exclude:
+    - "spec/**/*_spec.rb"
+Style/ConditionalAssignment:
+  Enabled: false
+Style/DateTime:
+  Enabled: false
+Style/Documentation:
+  Enabled: false
 Style/HashEachMethods:
-  Enabled: true
-Style/HashTransformKeys:
-  Enabled: true
-Style/HashTransformValues:
-  Enabled: true
+  Enabled: false
+Style/EachWithObject:
+  Enabled: false
 Style/EmptyMethod:
   Enabled: false
 Style/ExpandPathArguments:
   Enabled: false
+Style/ExponentialNotation:
+  Enabled: false
+Style/FormatString:
+  Enabled: false
 # We should enforce in Hanami 2.0
 Style/FrozenStringLiteralComment:
+  Enabled: false
+Style/GuardClause:
+  Enabled: false
+Style/HashTransformKeys:
+  Enabled: true
+Style/HashTransformValues:
+  Enabled: false
+Style/IfUnlessModifier:
+  Enabled: false
+Style/Lambda:
+  Enabled: false
+Style/LambdaCall:
+  Enabled: false
+Style/ParallelAssignment:
   Enabled: false
 Style/RaiseArgs:
   Enabled: false
 Style/RegexpLiteral:
   Enabled: false
+Style/StabbyLambdaParentheses:
+  Enabled: false
 # We should enforce double quotes in Hanami 2.0
 Style/StringLiterals:
   Enabled: false
-Layout/ClosingParenthesisIndentation:
+  ConsistentQuotesInMultiline: false
+Style/StringLiteralsInInterpolation:
+  Enabled: true
+  EnforcedStyle: double_quotes
+Style/SymbolArray:
+  Exclude:
+    - "spec/**/*_spec.rb"
+Style/TrailingUnderscoreVariable:
   Enabled: false
