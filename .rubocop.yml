@@ -110,6 +110,7 @@ Style/RegexpLiteral:
 # We should enforce double quotes in Hanami 2.0
 Style/StringLiterals:
   Enabled: true
+  EnforcedStyle: double_quotes
   ConsistentQuotesInMultiline: false
 Style/StringLiteralsInInterpolation:
   Enabled: true
