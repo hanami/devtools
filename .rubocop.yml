@@ -114,7 +114,7 @@ Style/StringLiterals:
   ConsistentQuotesInMultiline: false
 Style/StringLiteralsInInterpolation:
   Enabled: true
-  EnforcedStyle: double_quotes
+  EnforcedStyle: single_quotes
 Style/SymbolArray:
   Exclude:
     - "spec/**/*_spec.rb"
