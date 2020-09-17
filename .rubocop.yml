@@ -28,6 +28,8 @@ Layout/SpaceInsideHashLiteralBraces:
   Enabled: true
   EnforcedStyle: no_space
   EnforcedStyleForEmptyBraces: no_space
+Lint/AssignmentInCondition:
+  Enabled: false
 Lint/RaiseException:
   Enabled: false
 Metrics/AbcSize:
@@ -69,6 +71,8 @@ Style/DateTime:
   Enabled: false
 Style/Documentation:
   Enabled: false
+Style/DoubleNegation:
+  Enabled: false
 Style/HashEachMethods:
   Enabled: false
 Style/EachWithObject:
@@ -92,6 +96,8 @@ Style/IfUnlessModifier:
 Style/Lambda:
   Enabled: false
 Style/LambdaCall:
+  Enabled: false
+Style/MultilineBlockChain:
   Enabled: false
 Style/ParallelAssignment:
   Enabled: false
