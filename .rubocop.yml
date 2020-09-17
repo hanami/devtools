@@ -32,6 +32,8 @@ Lint/AssignmentInCondition:
   Enabled: false
 Lint/RaiseException:
   Enabled: false
+Lint/StructNewOverride:
+  Enabled: true
 Metrics/AbcSize:
   Max: 25
 Metrics/CyclomaticComplexity:
