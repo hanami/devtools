@@ -13,34 +13,95 @@ Bundler/OrderedGems:
   Enabled: false
 Gemspec/OrderedDependencies:
   Enabled: false
+Layout/FirstArrayElementIndentation:
+  EnforcedStyle: consistent
 Layout/LineLength:
+  Max: 120
+  Exclude:
+    - "spec/**/*_spec.rb"
+Layout/SpaceInLambdaLiteral:
+  Enabled: false
+Layout/MultilineMethodCallIndentation:
+  Enabled: true
+  EnforcedStyle: indented
+Layout/SpaceInsideHashLiteralBraces:
+  Enabled: true
+  EnforcedStyle: no_space
+  EnforcedStyleForEmptyBraces: no_space
+Lint/AssignmentInCondition:
+  Enabled: false
+Lint/RaiseException:
   Enabled: false
 Lint/StructNewOverride:
   Enabled: true
-Lint/RaiseException:
+Metrics/AbcSize:
+  Max: 25
+Metrics/CyclomaticComplexity:
   Enabled: true
+  Max: 12
+Metrics/MethodLength:
+  Enabled: false
+Metrics/ClassLength:
+  Enabled: false
 Metrics/BlockLength:
-  Exclude:
-    - "spec/**/*"
-    - "tmp/**/*"
+  Enabled: false
 Naming/FileName:
+  Enabled: false
+Naming/MemoizedInstanceVariableName:
+  Enabled: false
+Naming/MethodName:
+  Enabled: false
+Naming/PredicateName:
   Enabled: false
 Naming/RescuedExceptionsVariableName:
   PreferredName: exception
+Style/Alias:
+  Enabled: true
+  EnforcedStyle: prefer_alias_method
 Style/AndOr:
   Enabled: false
+Style/AsciiComments:
+  Enabled: false
+Style/BlockDelimiters:
+  Enabled: false
+Style/ClassAndModuleChildren:
+  Exclude:
+    - "spec/**/*_spec.rb"
+Style/ConditionalAssignment:
+  Enabled: false
+Style/DateTime:
+  Enabled: false
+Style/Documentation:
+  Enabled: false
+Style/DoubleNegation:
+  Enabled: false
 Style/HashEachMethods:
-  Enabled: true
-Style/HashTransformKeys:
-  Enabled: true
-Style/HashTransformValues:
-  Enabled: true
+  Enabled: false
+Style/EachWithObject:
+  Enabled: false
 Style/EmptyMethod:
   Enabled: false
 Style/ExpandPathArguments:
   Enabled: false
-# We should enforce in Hanami 2.0
+Style/FormatString:
+  Enabled: false
 Style/FrozenStringLiteralComment:
+  Enabled: true
+Style/GuardClause:
+  Enabled: false
+Style/HashTransformKeys:
+  Enabled: true
+Style/HashTransformValues:
+  Enabled: true
+Style/IfUnlessModifier:
+  Enabled: false
+Style/Lambda:
+  Enabled: false
+Style/LambdaCall:
+  Enabled: false
+Style/MultilineBlockChain:
+  Enabled: false
+Style/ParallelAssignment:
   Enabled: false
 Style/RaiseArgs:
   Enabled: false
@@ -48,6 +109,14 @@ Style/RegexpLiteral:
   Enabled: false
 # We should enforce double quotes in Hanami 2.0
 Style/StringLiterals:
-  Enabled: false
-Layout/ClosingParenthesisIndentation:
+  Enabled: true
+  EnforcedStyle: double_quotes
+  ConsistentQuotesInMultiline: false
+Style/StringLiteralsInInterpolation:
+  Enabled: true
+  EnforcedStyle: single_quotes
+Style/SymbolArray:
+  Exclude:
+    - "spec/**/*_spec.rb"
+Style/TrailingUnderscoreVariable:
   Enabled: false
