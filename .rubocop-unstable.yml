@@ -4,75 +4,15 @@
 # References:
 #   * https://github.com/bbatsov/ruby-style-guide
 #   * https://rubocop.readthedocs.io/
+#
+# This configuration is for Hanami 2.x and Rubocop 0.91+
+inherit_from:
+  - https://raw.githubusercontent.com/hanami/devtools/master/.rubocop.yml
+
 AllCops:
-  DisplayCopNames: true
-  DisplayStyleGuide: true
   TargetRubyVersion: 2.6
   ExtraDetails: false
+  NewCops: enable
   Exclude:
     - "vendor/**/*"
     - "vendor/**/.*" # See https://github.com/bbatsov/rubocop/issues/4832
-Gemspec/OrderedDependencies:
-  Enabled: false
-Layout/ClosingParenthesisIndentation:
-  Enabled: false
-Layout/EmptyLinesAroundAttributeAccessor:
-  Enabled: true
-Layout/LineLength:
-  Enabled: false
-Layout/SpaceAroundMethodCallOperator:
-  Enabled: true
-Lint/DeprecatedOpenSSLConstant:
-  Enabled: true
-Lint/MixedRegexpCaptureTypes:
-  Enabled: true
-Lint/RaiseException:
-  Enabled: true
-Lint/StructNewOverride:
-  Enabled: true
-Naming/FileName:
-  Enabled: false
-Naming/RescuedExceptionsVariableName:
-  PreferredName: "exception"
-Metrics/BlockLength:
-  Exclude:
-    - "spec/**/*"
-    - "tmp/**/*"
-Style/AccessorGrouping:
-  Enabled: true
-  EnforcedStyle: "separated"
-Style/AndOr:
-  Enabled: false
-Style/BisectedAttrAccessor:
-  Enabled: false
-Style/HashEachMethods:
-  Enabled: true
-Style/EmptyMethod:
-  Enabled: false
-Style/ExponentialNotation:
-  Enabled: false
-Style/ExpandPathArguments:
-  Enabled: false
-Style/FrozenStringLiteralComment:
-  Enabled: true
-Style/HashTransformKeys:
-  Enabled: true
-Style/HashTransformValues:
-  Enabled: true
-Style/RedundantAssignment:
-  Enabled: true
-Style/RedundantFetchBlock:
-  Enabled: true
-Style/RedundantRegexpCharacterClass:
-  Enabled: true
-Style/RedundantRegexpEscape:
-  Enabled: true
-Style/SlicingWithRange:
-  Enabled: true
-Style/StringLiterals:
-  Enabled: true
-  EnforcedStyle: double_quotes
-Style/RaiseArgs:
-  Enabled: false
-Style/RegexpLiteral:
-  Enabled: false

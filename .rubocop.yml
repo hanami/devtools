@@ -4,6 +4,9 @@
 # References:
 #   * https://github.com/bbatsov/ruby-style-guide
 #   * https://rubocop.readthedocs.io/
+#
+# This configuration is for Hanami 1.x and Rubocop 0.81, as it's the last
+# Rubocop version that supports Ruby 2.3.
 AllCops:
   DisplayCopNames: true
   DisplayStyleGuide: true
