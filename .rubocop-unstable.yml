@@ -36,6 +36,8 @@ Layout/SpaceInsideHashLiteralBraces:
   EnforcedStyleForEmptyBraces: no_space
 Lint/AssignmentInCondition:
   Enabled: false
+Lint/ConstantDefinitionInBlock:
+  Enabled: false
 Lint/RaiseException:
   Enabled: false
 Lint/StructNewOverride:
