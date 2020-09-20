@@ -55,6 +55,8 @@ Metrics/BlockLength:
   Enabled: false
 Naming/FileName:
   Enabled: false
+Naming/HeredocDelimiterNaming:
+  Enabled: false
 Naming/MemoizedInstanceVariableName:
   Enabled: false
 Naming/MethodName:
@@ -113,6 +115,21 @@ Style/MultilineBlockChain:
   Enabled: false
 Style/ParallelAssignment:
   Enabled: false
+Style/RedundantAssignment:
+  Enabled: true
+Style/RedundantFetchBlock:
+  Enabled: true
+Style/RedundantRegexpCharacterClass:
+  Enabled: true
+Style/RedundantRegexpEscape:
+  Enabled: true
+Style/SlicingWithRange:
+  Enabled: true
+Style/SpecialGlobalVars:
+  Enabled: false
+Style/StringLiterals:
+  Enabled: true
+  EnforcedStyle: double_quotes
 Style/RaiseArgs:
   Enabled: false
 Style/RegexpLiteral:
