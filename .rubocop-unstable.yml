@@ -49,9 +49,9 @@ Metrics/CyclomaticComplexity:
   Max: 12
 Metrics/MethodLength:
   Enabled: false
-Metrics/ClassLength:
-  Enabled: false
 Metrics/BlockLength:
+  Enabled: false
+Metrics/ClassLength:
   Enabled: false
 Naming/FileName:
   Enabled: false
@@ -87,8 +87,6 @@ Style/Documentation:
   Enabled: false
 Style/DoubleNegation:
   Enabled: false
-Style/HashEachMethods:
-  Enabled: false
 Style/EachWithObject:
   Enabled: false
 Style/EmptyMethod:
@@ -100,6 +98,8 @@ Style/FormatString:
 Style/FrozenStringLiteralComment:
   Enabled: true
 Style/GuardClause:
+  Enabled: false
+Style/HashEachMethods:
   Enabled: false
 Style/HashTransformKeys:
   Enabled: true
@@ -117,6 +117,8 @@ Style/OptionalBooleanParameter:
   Enabled: false
 Style/ParallelAssignment:
   Enabled: false
+Style/RaiseArgs:
+  Enabled: false
 Style/RedundantAssignment:
   Enabled: true
 Style/RedundantFetchBlock:
@@ -125,13 +127,11 @@ Style/RedundantRegexpCharacterClass:
   Enabled: true
 Style/RedundantRegexpEscape:
   Enabled: true
+Style/RegexpLiteral:
+  Enabled: false
 Style/SlicingWithRange:
   Enabled: true
 Style/SpecialGlobalVars:
-  Enabled: false
-Style/RaiseArgs:
-  Enabled: false
-Style/RegexpLiteral:
   Enabled: false
 Style/StringLiterals:
   Enabled: true
