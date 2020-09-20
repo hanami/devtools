@@ -32,6 +32,8 @@ Lint/StructNewOverride:
   Enabled: true
 Naming/FileName:
   Enabled: false
+Naming/HeredocDelimiterNaming:
+  Enabled: false
 Naming/RescuedExceptionsVariableName:
   PreferredName: "exception"
 Metrics/BlockLength:
@@ -69,6 +71,8 @@ Style/RedundantRegexpEscape:
   Enabled: true
 Style/SlicingWithRange:
   Enabled: true
+Style/SpecialGlobalVars:
+  Enabled: false
 Style/StringLiterals:
   Enabled: true
   EnforcedStyle: double_quotes

@@ -47,6 +47,8 @@ Metrics/BlockLength:
   Enabled: false
 Naming/FileName:
   Enabled: false
+Naming/HeredocDelimiterNaming:
+  Enabled: false
 Naming/MemoizedInstanceVariableName:
   Enabled: false
 Naming/MethodName:
@@ -107,7 +109,8 @@ Style/RaiseArgs:
   Enabled: false
 Style/RegexpLiteral:
   Enabled: false
-# We should enforce double quotes in Hanami 2.0
+Style/SpecialGlobalVars:
+  Enabled: false
 Style/StringLiterals:
   Enabled: true
   EnforcedStyle: double_quotes
