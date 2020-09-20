@@ -113,6 +113,8 @@ Style/LambdaCall:
   Enabled: false
 Style/MultilineBlockChain:
   Enabled: false
+Style/OptionalBooleanParameter:
+  Enabled: false
 Style/ParallelAssignment:
   Enabled: false
 Style/RedundantAssignment:
@@ -127,14 +129,10 @@ Style/SlicingWithRange:
   Enabled: true
 Style/SpecialGlobalVars:
   Enabled: false
-Style/StringLiterals:
-  Enabled: true
-  EnforcedStyle: double_quotes
 Style/RaiseArgs:
   Enabled: false
 Style/RegexpLiteral:
   Enabled: false
-# We should enforce double quotes in Hanami 2.0
 Style/StringLiterals:
   Enabled: true
   EnforcedStyle: double_quotes
