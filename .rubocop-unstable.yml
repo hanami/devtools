@@ -4,63 +4,121 @@
 # References:
 #   * https://github.com/bbatsov/ruby-style-guide
 #   * https://rubocop.readthedocs.io/
+#
+# This configuration is for Hanami 2.x and Rubocop 0.91+
 AllCops:
+  TargetRubyVersion: 2.6
   DisplayCopNames: true
   DisplayStyleGuide: true
-  TargetRubyVersion: 2.6
   ExtraDetails: false
+  NewCops: enable
   Exclude:
     - "vendor/**/*"
     - "vendor/**/.*" # See https://github.com/bbatsov/rubocop/issues/4832
+Bundler/OrderedGems:
+  Enabled: false
 Gemspec/OrderedDependencies:
   Enabled: false
-Layout/ClosingParenthesisIndentation:
-  Enabled: false
-Layout/EmptyLinesAroundAttributeAccessor:
-  Enabled: true
+Layout/FirstArrayElementIndentation:
+  EnforcedStyle: consistent
 Layout/LineLength:
+  Max: 120
+  Exclude:
+    - "spec/**/*_spec.rb"
+Layout/SpaceInLambdaLiteral:
   Enabled: false
-Layout/SpaceAroundMethodCallOperator:
+Layout/MultilineMethodCallIndentation:
   Enabled: true
-Lint/DeprecatedOpenSSLConstant:
+  EnforcedStyle: indented
+Layout/SpaceInsideHashLiteralBraces:
   Enabled: true
-Lint/MixedRegexpCaptureTypes:
-  Enabled: true
+  EnforcedStyle: no_space
+  EnforcedStyleForEmptyBraces: no_space
+Lint/AssignmentInCondition:
+  Enabled: false
+Lint/ConstantDefinitionInBlock:
+  Enabled: false
 Lint/RaiseException:
-  Enabled: true
+  Enabled: false
 Lint/StructNewOverride:
   Enabled: true
+Metrics/AbcSize:
+  Max: 25
+Metrics/CyclomaticComplexity:
+  Enabled: true
+  Max: 12
+Metrics/MethodLength:
+  Enabled: false
+Metrics/BlockLength:
+  Enabled: false
+Metrics/ClassLength:
+  Enabled: false
 Naming/FileName:
   Enabled: false
 Naming/HeredocDelimiterNaming:
   Enabled: false
+Naming/MemoizedInstanceVariableName:
+  Enabled: false
+Naming/MethodName:
+  Enabled: false
+Naming/PredicateName:
+  Enabled: false
 Naming/RescuedExceptionsVariableName:
-  PreferredName: "exception"
-Metrics/BlockLength:
-  Exclude:
-    - "spec/**/*"
-    - "tmp/**/*"
-Style/AccessorGrouping:
+  PreferredName: exception
+Style/Alias:
   Enabled: true
-  EnforcedStyle: "separated"
+  EnforcedStyle: prefer_alias_method
 Style/AndOr:
+  Enabled: false
+Style/AsciiComments:
   Enabled: false
 Style/BisectedAttrAccessor:
   Enabled: false
-Style/HashEachMethods:
-  Enabled: true
-Style/EmptyMethod:
+Style/BlockDelimiters:
   Enabled: false
-Style/ExponentialNotation:
+Style/ClassAndModuleChildren:
+  Exclude:
+    - "spec/**/*_spec.rb"
+Style/ConditionalAssignment:
+  Enabled: false
+Style/DateTime:
+  Enabled: false
+Style/Documentation:
+  Enabled: false
+Style/DoubleNegation:
+  Enabled: false
+Style/EachWithObject:
+  Enabled: false
+Style/EmptyMethod:
   Enabled: false
 Style/ExpandPathArguments:
   Enabled: false
+Style/FormatString:
+  Enabled: false
 Style/FrozenStringLiteralComment:
   Enabled: true
+Style/GuardClause:
+  Enabled: false
+Style/HashEachMethods:
+  Enabled: false
 Style/HashTransformKeys:
   Enabled: true
 Style/HashTransformValues:
   Enabled: true
+Style/IfUnlessModifier:
+  Enabled: false
+Style/Lambda:
+  Enabled: false
+Style/LambdaCall:
+  Enabled: false
+Style/MultilineBlockChain:
+  Enabled: false
+Style/OptionalBooleanParameter:
+  Enabled: false
+Style/ParallelAssignment:
+  Enabled: false
+Style/RaiseArgs:
+  Enabled: false
 Style/RedundantAssignment:
   Enabled: true
 Style/RedundantFetchBlock:
@@ -69,6 +127,8 @@ Style/RedundantRegexpCharacterClass:
   Enabled: true
 Style/RedundantRegexpEscape:
   Enabled: true
+Style/RegexpLiteral:
+  Enabled: false
 Style/SlicingWithRange:
   Enabled: true
 Style/SpecialGlobalVars:
@@ -76,7 +136,12 @@ Style/SpecialGlobalVars:
 Style/StringLiterals:
   Enabled: true
   EnforcedStyle: double_quotes
-Style/RaiseArgs:
-  Enabled: false
-Style/RegexpLiteral:
+  ConsistentQuotesInMultiline: false
+Style/StringLiteralsInInterpolation:
+  Enabled: true
+  EnforcedStyle: single_quotes
+Style/SymbolArray:
+  Exclude:
+    - "spec/**/*_spec.rb"
+Style/TrailingUnderscoreVariable:
   Enabled: false
