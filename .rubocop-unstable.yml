@@ -7,6 +7,7 @@
 #
 # This configuration is for Hanami 2.x and Rubocop 0.91+
 AllCops:
+  TargetRubyVersion: 2.6
   DisplayCopNames: true
   DisplayStyleGuide: true
   ExtraDetails: false
