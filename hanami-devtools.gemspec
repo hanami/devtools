@@ -29,7 +29,7 @@ Gem::Specification.new do |spec| # rubocop:disable Metrics/BlockLength
   spec.add_dependency "aruba", "~> 0.14"
   spec.add_dependency "bundler", ">= 1.6", "< 3"
   spec.add_dependency "dotenv", "~> 2.0"
-  spec.add_dependency "capybara", "3.15.1"
+  spec.add_dependency "capybara", "3.35.3"
   spec.add_dependency "codecov", "~> 0.1"
   spec.add_dependency "excon", "~> 0.60"
   spec.add_dependency "poltergeist", "~> 1.17"
