@@ -7,4 +7,4 @@
 /spec/reports/
 /tmp/
 Gemfile.lock
-.rubocop-https---raw-githubusercontent-com-hanami-devtools-master--rubocop-yml
+.rubocop-*
