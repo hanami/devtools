@@ -5,13 +5,16 @@
 #   * https://github.com/bbatsov/ruby-style-guide
 #   * https://rubocop.readthedocs.io/
 #
-# This configuration is for Hanami 1.x and Rubocop 0.81, as it's the last
-# Rubocop version that supports Ruby 2.3.
+# This configuration is for Hanami 2.x and Rubocop 0.91+
 AllCops:
+  TargetRubyVersion: 2.6
   DisplayCopNames: true
   DisplayStyleGuide: true
   ExtraDetails: false
-  TargetRubyVersion: 2.3
+  NewCops: enable
+  Exclude:
+    - "vendor/**/*"
+    - "vendor/**/.*" # See https://github.com/bbatsov/rubocop/issues/4832
 Bundler/OrderedGems:
   Enabled: false
 Gemspec/OrderedDependencies:
@@ -33,6 +36,8 @@ Layout/SpaceInsideHashLiteralBraces:
   EnforcedStyleForEmptyBraces: no_space
 Lint/AssignmentInCondition:
   Enabled: false
+Lint/ConstantDefinitionInBlock:
+  Enabled: false
 Lint/RaiseException:
   Enabled: false
 Lint/StructNewOverride:
@@ -44,9 +49,9 @@ Metrics/CyclomaticComplexity:
   Max: 12
 Metrics/MethodLength:
   Enabled: false
-Metrics/ClassLength:
-  Enabled: false
 Metrics/BlockLength:
+  Enabled: false
+Metrics/ClassLength:
   Enabled: false
 Naming/FileName:
   Enabled: false
@@ -67,6 +72,8 @@ Style/AndOr:
   Enabled: false
 Style/AsciiComments:
   Enabled: false
+Style/BisectedAttrAccessor:
+  Enabled: false
 Style/BlockDelimiters:
   Enabled: false
 Style/ClassAndModuleChildren:
@@ -80,8 +87,6 @@ Style/Documentation:
   Enabled: false
 Style/DoubleNegation:
   Enabled: false
-Style/HashEachMethods:
-  Enabled: false
 Style/EachWithObject:
   Enabled: false
 Style/EmptyMethod:
@@ -93,6 +98,8 @@ Style/FormatString:
 Style/FrozenStringLiteralComment:
   Enabled: true
 Style/GuardClause:
+  Enabled: false
+Style/HashEachMethods:
   Enabled: false
 Style/HashTransformKeys:
   Enabled: true
@@ -106,12 +113,24 @@ Style/LambdaCall:
   Enabled: false
 Style/MultilineBlockChain:
   Enabled: false
+Style/OptionalBooleanParameter:
+  Enabled: false
 Style/ParallelAssignment:
   Enabled: false
 Style/RaiseArgs:
   Enabled: false
+Style/RedundantAssignment:
+  Enabled: true
+Style/RedundantFetchBlock:
+  Enabled: true
+Style/RedundantRegexpCharacterClass:
+  Enabled: true
+Style/RedundantRegexpEscape:
+  Enabled: true
 Style/RegexpLiteral:
   Enabled: false
+Style/SlicingWithRange:
+  Enabled: true
 Style/SpecialGlobalVars:
   Enabled: false
 Style/StringLiterals:
