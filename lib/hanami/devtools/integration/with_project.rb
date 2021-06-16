@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+require "hanami/devtools/integration/git"
 require "hanami/devtools/integration/silently"
 require "hanami/devtools/integration/bundler"
 require "hanami/devtools/integration/with_tmp_directory"
@@ -16,6 +17,8 @@ module RSpec
       KNOWN_ARGUMENTS = %i[database template test].freeze
 
       def with_project(project = "bookshelf", args = {}) # rubocop:disable Metrics/MethodLength
+        setup_default_git_branch
+
         with_tmp_directory do
           create_project(project, args)
 
