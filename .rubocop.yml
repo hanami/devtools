@@ -99,6 +99,8 @@ Style/FrozenStringLiteralComment:
   Enabled: true
 Style/GuardClause:
   Enabled: false
+Style/HashConversion:
+  Enabled: false
 Style/HashEachMethods:
   Enabled: false
 Style/HashTransformKeys:
