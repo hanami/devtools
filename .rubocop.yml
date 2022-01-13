@@ -5,9 +5,9 @@
 #   * https://github.com/bbatsov/ruby-style-guide
 #   * https://rubocop.readthedocs.io/
 #
-# This configuration is for Hanami 2.x and Rubocop 0.91+
+# This configuration is for Hanami 2.x and Rubocop ~> 1.0
 AllCops:
-  TargetRubyVersion: 2.6
+  TargetRubyVersion: 3.0
   DisplayCopNames: true
   DisplayStyleGuide: true
   ExtraDetails: false
