@@ -38,6 +38,8 @@ Lint/AssignmentInCondition:
   Enabled: false
 Lint/ConstantDefinitionInBlock:
   Enabled: false
+Lint/EmptyClass:
+  Enabled: false
 Lint/RaiseException:
   Enabled: false
 Lint/StructNewOverride:
