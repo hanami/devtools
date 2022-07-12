@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require "hanami/utils/basic_object"
+require "dry/core"
 
 module Platform
   # Match current platform variables like Ruby engine, current database.
@@ -10,7 +10,7 @@ module Platform
     # Represents a failing match
     #
     # @since 0.2.0
-    class Nope < Hanami::Utils::BasicObject
+    class Nope < Dry::Core::BasicObject
       def or(other, &blk)
         blk.nil? ? other : blk.call # rubocop:disable Performance/RedundantBlockCall
       end
