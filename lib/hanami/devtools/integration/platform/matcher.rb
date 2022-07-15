@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require "dry/core"
+require "dry/core/basic_object"
 
 module Platform
   # Match current platform variables like Ruby engine, current database.
