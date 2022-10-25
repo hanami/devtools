@@ -16,7 +16,7 @@ Gem::Specification.new do |spec| # rubocop:disable Metrics/BlockLength
   spec.license       = "MIT"
 
   spec.metadata["allowed_push_host"] = ""
-  spec.required_ruby_version         = ">= 2.3.0"
+  spec.required_ruby_version         = ">= 3.0"
 
   spec.bindir        = "exe"
   spec.executables   = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
