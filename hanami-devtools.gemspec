@@ -35,7 +35,7 @@ Gem::Specification.new do |spec| # rubocop:disable Metrics/BlockLength
   spec.add_dependency "poltergeist", "~> 1.17"
   spec.add_dependency "rack", "~> 2.0"
   spec.add_dependency "rspec", "~> 3.7"
-  spec.add_dependency "dry-core", ">= 1.0.0.rc1", "< 2"
+  spec.add_dependency "dry-core", ">= 0.9", "< 2"
   spec.add_dependency "hanami-utils"
 
   spec.add_development_dependency "rake", "~> 13.0"
