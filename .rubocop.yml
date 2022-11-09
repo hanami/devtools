@@ -64,6 +64,8 @@ Naming/MemoizedInstanceVariableName:
   Enabled: false
 Naming/MethodName:
   Enabled: false
+Naming/MethodParameterName:
+  Enabled: false
 Naming/PredicateName:
   Enabled: false
 Naming/RescuedExceptionsVariableName:
