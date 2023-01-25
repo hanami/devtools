@@ -18,6 +18,8 @@ AllCops:
     - "vendor/**/.*" # See https://github.com/bbatsov/rubocop/issues/4832
 Bundler/OrderedGems:
   Enabled: false
+Gemspec/DevelopmentDependencies:
+  Enabled: false
 Gemspec/OrderedDependencies:
   Enabled: false
 Layout/FirstArrayElementIndentation:
