@@ -2,6 +2,6 @@
 
 module Hanami
   module Devtools
-    VERSION = "0.1.0"
+    VERSION = "2023.02.16"
   end
 end
