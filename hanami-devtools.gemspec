@@ -15,7 +15,7 @@ Gem::Specification.new do |spec| # rubocop:disable Metrics/BlockLength
   spec.homepage      = "http://hanamirb.org"
   spec.license       = "MIT"
 
-  spec.metadata["allowed_push_host"] = ""
+  spec.metadata["allowed_push_host"] = "https://rubygems.org"
   spec.required_ruby_version         = ">= 3.0"
 
   spec.bindir        = "exe"
