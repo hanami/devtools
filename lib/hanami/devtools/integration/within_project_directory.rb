@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 require "pathname"
 require "hanami/devtools/integration/with_directory"
 require "hanami/devtools/integration/env"

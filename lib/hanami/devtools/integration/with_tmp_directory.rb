@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 require "fileutils"
 require "hanami/utils/files"
 require "hanami/devtools/integration/with_directory"

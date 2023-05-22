@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 require "hanami/devtools/integration/bundler"
 require "hanami/devtools/integration/files"
 require "hanami/devtools/integration/retry"

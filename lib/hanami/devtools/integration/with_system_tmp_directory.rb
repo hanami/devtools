@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 require "hanami/devtools/integration/with_tmp_directory"
 
 module RSpec

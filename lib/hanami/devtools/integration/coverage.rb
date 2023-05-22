@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 module RSpec
   module Support
     # Code coverage support

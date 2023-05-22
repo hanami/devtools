@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 # Matchers for current OS, Ruby engine.
 #
 # @since 0.2.0
