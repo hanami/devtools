@@ -144,6 +144,8 @@ Style/SlicingWithRange:
   Enabled: true
 Style/SpecialGlobalVars:
   Enabled: false
+Style/StabbyLambdaParentheses:
+  Enabled: false
 Style/StringLiterals:
   Enabled: true
   EnforcedStyle: double_quotes
