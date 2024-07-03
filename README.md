@@ -16,4 +16,6 @@ inherit_from:
 Then you can add more below it as needed.
 
 Be aware thought that we provide no commitment to keeping this file stable:
-it's merely our preferences for working on Hanami libraries.
+it's merely our preferences for working on Hanami _libraries_.
+We're not interested in changing it based on how you're using it in Hanami _projects_.
+If you don't like a rule, you can override it in your `.rubocop.yml` file.
