@@ -1,35 +1,19 @@
 # Hanami::Devtools
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/hanami/devtools`. To experiment with that code, run `bin/console` for an interactive prompt.
+These are various tools we use for developing [Hanami](https://github.com/hanami).
 
-TODO: Delete this and the text above, and describe your gem
+**You probably don't want to use this gem**, unless you're working on Hanami.
 
-## Installation
+One way you could use it in a project is to inherit from Hanami's Rubocop config.
 
-Add this line to your application's Gemfile:
+To do that, start your `.rubocop.yml` file with:
 
-```ruby
-gem 'hanami-devtools'
+```yml
+inherit_from:
+  https://raw.githubusercontent.com/hanami/devtools/master/.rubocop.yml
 ```
 
-And then execute:
+Then you can add more below it as needed.
 
-    $ bundle
-
-Or install it yourself as:
-
-    $ gem install hanami-devtools
-
-## Usage
-
-TODO: Write usage instructions here
-
-## Development
-
-After checking out the repo, run `bin/setup` to install dependencies. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
-
-To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and tags, and push the `.gem` file to [rubygems.org](https://rubygems.org).
-
-## Contributing
-
-Bug reports and pull requests are welcome on GitHub at https://github.com/hanami/devtools.
+Be aware thought that we provide no commitment to keeping this file stable:
+it's merely our preferences for working on Hanami libraries.
