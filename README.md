@@ -10,7 +10,7 @@ To do that, start your `.rubocop.yml` file with:
 
 ```yml
 inherit_from:
-  https://raw.githubusercontent.com/hanami/devtools/master/.rubocop.yml
+  https://raw.githubusercontent.com/hanami/devtools/main/.rubocop.yml
 ```
 
 Then you can add more below it as needed.
